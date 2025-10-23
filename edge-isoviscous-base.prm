@@ -18,8 +18,8 @@ subsection Termination criteria
 	set Termination criteria = end time, steady state heat flux
 	subsection Steady state heat flux
 		set Boundary indicators = top, left
-		set Maximum relative deviation = 0.01
-		set Time in steady state = 0.1
+		set Maximum relative deviation = 0.001
+		set Time in steady state = 0.2
 	end
 end
 
