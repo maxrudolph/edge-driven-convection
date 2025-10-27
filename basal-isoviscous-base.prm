@@ -11,7 +11,7 @@ set Dimension                              = 2
 set Use years in output instead of seconds = false
 set End time                               = 1.0
 
-set Output directory                       = output-edge-isoviscous-RAYLEIGH
+set Output directory                       = output-basal-isoviscous-RAYLEIGH
 set Maximum first time step = 0.01
 set Maximum relative increase in time step = 10
 
@@ -73,8 +73,8 @@ subsection Initial temperature model
 
   subsection Function
     set Variable names      = x,z
-    set Function constants  = p=0.0, L=1, pi=3.1415926536, k=1
-    set Function expression = 0.5
+    set Function constants  = p=0.1, L=1, pi=3.1415926536, k=2
+    set Function expression = (1.0-z)/L + p*sin(k*pi*x/L)*sin(pi*z/L)
   end
 end
 
@@ -87,12 +87,12 @@ end
 # these boundaries; this is also often used to specify symmetry
 # boundaries).
 subsection Boundary temperature model
-  set Fixed temperature boundary indicators = left, top
+  set Fixed temperature boundary indicators = top, bottom
   set List of model names = box
 
   subsection Box
-    set Bottom temperature = 0
-    set Left temperature   = 1
+    set Bottom temperature = 1
+    set Left temperature   = 0
     set Right temperature  = 0
     set Top temperature    = 0
   end

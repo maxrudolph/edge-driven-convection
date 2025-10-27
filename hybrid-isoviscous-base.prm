@@ -11,7 +11,7 @@ set Dimension                              = 2
 set Use years in output instead of seconds = false
 set End time                               = 1.0
 
-set Output directory                       = output-edge-isoviscous-RAYLEIGH
+set Output directory                       = output-hybrid-isoviscous-RAYLEIGH
 set Maximum first time step = 0.01
 set Maximum relative increase in time step = 10
 
@@ -87,11 +87,11 @@ end
 # these boundaries; this is also often used to specify symmetry
 # boundaries).
 subsection Boundary temperature model
-  set Fixed temperature boundary indicators = left, top
+  set Fixed temperature boundary indicators = left, top, bottom
   set List of model names = box
 
   subsection Box
-    set Bottom temperature = 0
+    set Bottom temperature = 1
     set Left temperature   = 1
     set Right temperature  = 0
     set Top temperature    = 0
