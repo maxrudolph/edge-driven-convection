@@ -9,7 +9,7 @@ set Dimension                              = 2
 # time system we want to work in and what the end time is. We
 # also designate an output directory.
 set Use years in output instead of seconds = false
-set End time                               = 1.0
+set End time                               = 2.0
 
 set Output directory                       = output-edge-tdepv-BETA-RAYLEIGH
 set Maximum first time step = 0.01
@@ -17,7 +17,7 @@ set Maximum relative increase in time step = 10
 
 subsection Termination criteria
 	set Termination criteria = end time, end step
-	set End step                               = 4000
+	set End step                               = 16000
 	subsection Steady state heat flux
 		set Boundary indicators = top, left
 		set Maximum relative deviation = 0.001
@@ -150,7 +150,7 @@ end
 # on. We here use a globally refined mesh without
 # adaptive mesh refinement.
 subsection Mesh refinement
-  set Initial global refinement                = 5
+  set Initial global refinement                = 6
   set Initial adaptive refinement              = 0
   set Time steps between mesh refinement       = 0
 end
@@ -173,8 +173,8 @@ subsection Postprocess
     subsection Heat flux map
       set Output point wise heat flux = true
     end
-    set Time between graphical output = 0.01
-    set Time steps between graphical output = 100
+    set Time between graphical output = 0.05
+    set Time steps between graphical output = 200
   end
 end
 
